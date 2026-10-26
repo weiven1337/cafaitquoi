@@ -3,5 +3,11 @@
 <title>Autorisation</title><link rel="stylesheet" href="style.css"></head>
 <body><main>
 <h1>Autorisation reçue</h1>
-<p>Tu peux fermer cet onglet.</p>
+<p>Code à coller dans l'outil de stats (valable quelques minutes) :</p>
+<pre id="code" style="white-space:pre-wrap;word-break:break-all;background:#161b22;padding:12px;border-radius:8px"></pre>
+<p>Tu peux ensuite fermer cet onglet.</p>
+<script>
+var q = new URLSearchParams(location.search);
+document.getElementById('code').textContent = q.get('code') || q.get('error_description') || q.get('error') || '(aucun code)';
+</script>
 </main></body></html>
